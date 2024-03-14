@@ -13,36 +13,32 @@ This repository contains Python functions for analyzing tweet data stored in JSO
    - Parses the JSON file once and updates the date_user_count dictionary directly.
    - Finds the top 10 dates with the most tweets and their corresponding users from the date_user_count dictionary.
 
-2. **q2_time**
-   - Descripción: Determina los 10 emojis más utilizados en el contenido de los tweets.
-   - Archivo: `q2_time.py`
-   - Firma de la Función: `def q2_time(file_path: str) -> List[Tuple[str, int]]`
+3. **q2_time**
+   - All lines from the JSON file are read into memory at once
+   - Reading the entire file into memory reduces disk access time compared to reading line by line.
 
-3. **q3_time**
+4. **q2_memory**
+   - JSON data is processed line by line without loading the entire file into memory at once
+   - minimizes memory usage because it processes one line of JSON data at a time, which doesn't require storing the entire file content in memory
+
+5. **q3_time**
    - Descripción: Identifica los 10 usuarios más influyentes históricamente basados en el número de menciones (@) que reciben en los tweets.
    - Archivo: `q3_time.py`
    - Firma de la Función: `def q3_time(file_path: str) -> List[Tuple[str, int]]`
-
-
-
-5. **q2_memory**
-   - Descripción: Implementación alternativa de q2_time optimizada para el uso de memoria.
-   - Archivo: `q2_memory.py`
-   - Firma de la Función: `def q2_memory(file_path: str) -> List[Tuple[str, int]]`
 
 6. **q3_memory**
    - Descripción: Implementación alternativa de q3_time optimizada para el uso de memoria.
    - Archivo: `q3_memory.py`
    - Firma de la Función: `def q3_memory(file_path: str) -> List[Tuple[str, int]]`
 
-## Diferencias Entre Implementaciones Optimizadas para Tiempo y Memoria
+## Differences Between Optimizations for Time and Memory
 
-- **Optimización para el Tiempo de Ejecución:**
-  - Utiliza estructuras de datos y algoritmos eficientes para minimizar el tiempo de ejecución.
-  - Procesa datos rápidamente a expensas de un uso potencialmente mayor de memoria.
-  - Más adecuado para escenarios donde la velocidad de procesamiento es crítica y las restricciones de memoria son menos estrictas.
+**Optimization for Execution Time:**
+   - Uses efficient data structures and algorithms to minimize execution time.
+   - Processes data quickly at the expense of potentially higher memory usage.
+   - More suitable for scenarios where processing speed is critical and memory constraints are less strict.
 
-- **Optimización para el Uso de Memoria:**
-  - Minimiza el uso de memoria a expensas de un tiempo de ejecución potencialmente más largo.
-  - Prioriza una gestión eficiente de la memoria y un almacenamiento de datos conservador.
-  - Ideal para escenarios donde las restricciones de memoria son ajustadas y la velocidad de procesamiento puede sacrificarse por una huella de memoria reducida.
+**Optimization for Memory Usage:**
+   - Minimizes memory usage at the expense of potentially longer execution time.
+   - Prioritizes efficient memory management and conservative data storage.
+   - Ideal for scenarios where memory constraints are tight, and processing speed can be sacrificed for reduced memory footprint.
