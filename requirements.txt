@@ -1,3 +1,4 @@
+memory-profiler==0.61.0
 asttokens==2.4.0
 backcall==0.2.0
 comm==0.1.4
